@@ -1,0 +1,32 @@
+# TODO - Certificate Management System
+
+## Step 1: Implement certificate verification
+- [ ] Replace root verify.php with certificate-aware verification supporting: verify.php?cert=<certificate_id>
+- [ ] Move current “verification report generator” logic into new file: verification-report.php
+
+## Step 2: Add certificate admin pages
+- [ ] admin/certificates.php (list/search)
+- [ ] admin/add-certificate.php (create + photo upload)
+- [ ] admin/edit-certificate.php (edit + re-generate QR)
+- [ ] admin/delete-certificate.php (delete/revoke)
+- [ ] admin/view-certificate.php (preview)
+- [ ] admin/print-certificate.php (print/HTML)
+
+## Step 3: Add QR generator
+- [ ] certificates/generate-qr.php
+- [ ] On add/edit, create QR token that encodes verify.php?cert=<certificate_id>
+- [ ] Store QR filename/path in certificates.qr_code
+
+## Step 4: Wire dashboard actions
+- [ ] Update dashboard.php certificates section to include buttons: Verify / Print / Download
+- [ ] Hook actions to view-certificate/verify/print endpoints
+
+## Step 5: Navigation
+- [ ] Update admin/header.php to link to admin/certificates.php
+
+## Step 6: Smoke testing
+- [ ] Create certificate in admin
+- [ ] Scan QR -> verify page shows valid certificate
+- [ ] Revoke/delete -> verify shows revoked/invalid
+- [ ] Student dashboard shows certificate row and actions work
+
